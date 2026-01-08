@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 최적화 가이드</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .issue {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .solution {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .image-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .image-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        .size-large { color: #dc3545; font-weight: bold; }
+        .size-medium { color: #fd7e14; }
+        .size-small { color: #28a745; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .tool-option {
+            background: #e7f3ff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Blanche 웹사이트 이미지 최적화 가이드</h1>
+
+        <div class="issue">
+            <h3>⚠️ 발견된 문제점</h3>
+            <ul>
+                <li><strong>초대형 이미지:</strong> 7개 파일이 각각 17-25MB (총 ~140MB)</li>
+                <li><strong>구형 포맷:</strong> 모든 이미지가 PNG 형식 (WebP 대비 2-3배 큰 용량)</li>
+                <li><strong>반응형 미지원:</strong> 모바일에서도 동일한 대용량 파일 다운로드</li>
+                <li><strong>과도한 해상도:</strong> 6000x4002 픽셀 (웹 표준: 1920x1280)</li>
+            </ul>
+        </div>
+
+        <h2>📊 이미지 분석</h2>
+
+        <h3>🔴 우선순위 높음 - 초대형 이미지 (17-25 MB)</h3>
+        <div class="image-list">
+            <div class="image-card">
+                <div class="size-large">004.png - 22 MB</div>
+                <div>6000x4002 픽셀</div>
+                <div>→ WebP 1920px: ~600 KB (97% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-large">019.png - 20 MB</div>
+                <div>6000x4002 픽셀</div>
+                <div>→ WebP 1920px: ~550 KB (97% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-large">023.png - 17 MB</div>
+                <div>6000x4002 픽셀</div>
+                <div>→ WebP 1920px: ~500 KB (97% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-large">032.png - 18 MB</div>
+                <div>6000x4002 픽셀</div>
+                <div>→ WebP 1920px: ~520 KB (97% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-large">037.png - 17 MB</div>
+                <div>6000x4002 픽셀</div>
+                <div>→ WebP 1920px: ~500 KB (97% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-large">069.png - 25 MB</div>
+                <div>4002x6000 픽셀</div>
+                <div>→ WebP 1280px: ~400 KB (98% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-large">075.png - 21 MB</div>
+                <div>6000x4002 픽셀</div>
+                <div>→ WebP 1920px: ~600 KB (97% 감소)</div>
+            </div>
+        </div>
+
+        <h3>🟡 중간 우선순위 - 제품 이미지 (2.8-3.6 MB)</h3>
+        <div class="image-list">
+            <div class="image-card">
+                <div class="size-medium">2.png - 2.8 MB</div>
+                <div>1800x1800 픽셀 (히어로 이미지)</div>
+                <div>→ WebP: ~400 KB (86% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-medium">3.png - 3.6 MB</div>
+                <div>1800x1800 픽셀</div>
+                <div>→ WebP: ~500 KB (86% 감소)</div>
+            </div>
+            <div class="image-card">
+                <div class="size-medium">5.png - 3.5 MB</div>
+                <div>1800x1800 픽셀</div>
+                <div>→ WebP: ~500 KB (86% 감소)</div>
+            </div>
+        </div>
+
+        <h3>🟢 낮은 우선순위 - 리뷰 이미지 (1.1-2 MB)</h3>
+        <div class="image-list">
+            <div class="image-card">
+                <div class="size-medium">Review-0.png - 2.0 MB</div>
+                <div>→ WebP: ~280 KB</div>
+            </div>
+            <div class="image-card">
+                <div class="size-medium">Review-1.png - 1.9 MB</div>
+                <div>→ WebP: ~260 KB</div>
+            </div>
+            <div class="image-card">
+                <div class="size-medium">Review-2.png - 1.1 MB</div>
+                <div>→ WebP: ~150 KB</div>
+            </div>
+            <div class="image-card">
+                <div class="size-medium">Review-3.png - 1.3 MB</div>
+                <div>→ WebP: ~180 KB</div>
+            </div>
+        </div>
+
+        <h2>✅ 해결 방법</h2>
+
+        <div class="solution">
+            <h3>방법 1: 온라인 도구 사용 (가장 쉬움)</h3>
+            <div class="tool-option">
+                <h4>🌐 Squoosh (추천)</h4>
+                <p><a href="https://squoosh.app" target="_blank">https://squoosh.app</a></p>
+                <ul>
+                    <li>Google에서 만든 무료 이미지 최적화 도구</li>
+                    <li>브라우저에서 직접 처리 (업로드 불필요)</li>
+                    <li>실시간 비교 및 품질 조정 가능</li>
+                </ul>
+                <p><strong>설정:</strong></p>
+                <ul>
+                    <li>Format: WebP</li>
+                    <li>Quality: 85</li>
+                    <li>Resize: 큰 이미지는 1920px로 조정</li>
+                </ul>
+            </div>
+
+            <div class="tool-option">
+                <h4>🔧 TinyPNG</h4>
+                <p><a href="https://tinypng.com" target="_blank">https://tinypng.com</a></p>
+                <ul>
+                    <li>PNG 최적화에 특화</li>
+                    <li>한 번에 20개 파일 처리 가능</li>
+                    <li>자동 압축 (설정 불필요)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="solution">
+            <h3>방법 2: 명령줄 도구 사용</h3>
+
+            <h4>FFmpeg 사용 (설치 필요):</h4>
+            <pre><code># 단일 파일 변환
+ffmpeg -i input.png -vf scale=1920:-1 -c:v libwebp -quality 85 output.webp
+
+# 여러 파일 일괄 변환
+for f in *.png; do
+  ffmpeg -i "$f" -vf scale=1920:-1 -c:v libwebp -quality 85 "output-$f.webp"
+done</code></pre>
+
+            <h4>Sharp CLI 사용:</h4>
+            <pre><code># 설치
+npm install -g sharp-cli
+
+# 변환
+sharp -i input.png -o output.webp -f webp --quality 85 --width 1920</code></pre>
+        </div>
+
+        <div class="solution">
+            <h3>방법 3: CDN 서비스 사용 (최고의 성능)</h3>
+            <div class="tool-option">
+                <h4>☁️ Cloudinary</h4>
+                <p>이미지를 Cloudinary에 업로드하면 자동으로:</p>
+                <ul>
+                    <li>WebP/AVIF 변환</li>
+                    <li>반응형 크기 생성</li>
+                    <li>Lazy loading</li>
+                    <li>전 세계 CDN 배포</li>
+                </ul>
+                <p>무료 플랜: 월 25GB 대역폭, 25GB 저장공간</p>
+            </div>
+        </div>
+
+        <h2>📝 구현 단계</h2>
+        <ol>
+            <li><strong>이미지 최적화</strong>
+                <ul>
+                    <li>위 방법 중 하나 선택하여 모든 PNG를 WebP로 변환</li>
+                    <li>큰 이미지(004, 019, 023, 032, 037, 069, 075)는 1920px로 리사이즈</li>
+                    <li>중간 이미지(2, 3, 5)는 원본 크기 유지하고 WebP로만 변환</li>
+                </ul>
+            </li>
+            <li><strong>HTML 업데이트</strong>
+                <ul>
+                    <li>&lt;picture&gt; 엘리먼트로 변경하여 WebP 우선 제공</li>
+                    <li>PNG를 폴백으로 유지</li>
+                    <li>srcset으로 반응형 이미지 제공</li>
+                </ul>
+            </li>
+            <li><strong>테스트</strong>
+                <ul>
+                    <li>로딩 속도 확인</li>
+                    <li>다양한 기기에서 테스트</li>
+                    <li>이미지 품질 확인</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>🎯 예상 결과</h2>
+        <div class="solution">
+            <ul>
+                <li><strong>현재 용량:</strong> ~153 MB</li>
+                <li><strong>최적화 후:</strong> ~5-8 MB</li>
+                <li><strong>용량 절감:</strong> 94-95%</li>
+                <li><strong>로딩 시간:</strong> 10-30초 → 1-3초</li>
+            </ul>
+        </div>
+
+        <h2>💡 추가 권장사항</h2>
+        <ul>
+            <li><strong>Lazy Loading:</strong> 이미 구현됨 ✅</li>
+            <li><strong>Width/Height 속성:</strong> 레이아웃 시프트 방지를 위해 추가 필요</li>
+            <li><strong>Preload:</strong> 히어로 이미지에 preload 적용</li>
+            <li><strong>Content Delivery Network (CDN):</strong> 전 세계 사용자를 위한 빠른 배포</li>
+        </ul>
+    </div>
+</body>
+</html>

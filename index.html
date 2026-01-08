@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blanche - Premium Dental Care</title>
+
+    <!-- Preload critical hero image -->
+    <link rel="preload" as="image" href="images/blanche/2.png" fetchpriority="high">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bellefair&display=swap');
@@ -73,6 +77,8 @@
             <img
                 src="images/blanche/Blanche_BI_B.png"
                 alt="BLANCHE"
+                width="1506"
+                height="255"
                 class="h-6 w-auto object-contain drop-shadow-lg"
             />
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-700">
@@ -112,12 +118,23 @@
             <div class="relative group perspective-1000">
                 <div class="relative z-10 transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-3xl blur-2xl"></div>
-                    <img
-                        src="images/blanche/2.png"
-                        alt="Blanche Toothpaste"
-                        loading="eager"
-                        class="relative w-full max-w-lg mx-auto drop-shadow-2xl"
-                    />
+                    <picture>
+                        <source
+                            type="image/webp"
+                            srcset="images/blanche/2-small.webp 640w,
+                                    images/blanche/2-medium.webp 1024w,
+                                    images/blanche/2-large.webp 1920w"
+                            sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px">
+                        <img
+                            src="images/blanche/2.png"
+                            alt="Blanche Toothpaste"
+                            loading="eager"
+                            fetchpriority="high"
+                            width="1800"
+                            height="1800"
+                            class="relative w-full max-w-lg mx-auto drop-shadow-2xl"
+                        />
+                    </picture>
                 </div>
             </div>
         </div>
@@ -264,7 +281,21 @@
                     </div>
                     <div class="order-1 md:order-2 relative">
                         <div class="bg-white/30 backdrop-blur-2xl rounded-3xl p-6 border border-white/50 shadow-2xl transform hover:scale-105 transition-all duration-500">
-                            <img src="images/blanche/3.png" alt="Triple Coating" loading="lazy" class="w-full rounded-2xl">
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    srcset="images/blanche/3-small.webp 640w,
+                                            images/blanche/3-medium.webp 1024w,
+                                            images/blanche/3-large.webp 1920w"
+                                    sizes="(max-width: 768px) 100vw, 50vw">
+                                <img
+                                    src="images/blanche/3.png"
+                                    alt="Triple Coating"
+                                    loading="lazy"
+                                    width="1800"
+                                    height="1800"
+                                    class="w-full rounded-2xl">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -273,7 +304,21 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="relative">
                         <div class="bg-white/30 backdrop-blur-2xl rounded-3xl p-6 border border-white/50 shadow-2xl transform hover:scale-105 transition-all duration-500">
-                            <img src="images/blanche/5.png" alt="Natural Ingredients" loading="lazy" class="w-full rounded-2xl">
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    srcset="images/blanche/5-small.webp 640w,
+                                            images/blanche/5-medium.webp 1024w,
+                                            images/blanche/5-large.webp 1920w"
+                                    sizes="(max-width: 768px) 100vw, 50vw">
+                                <img
+                                    src="images/blanche/5.png"
+                                    alt="Natural Ingredients"
+                                    loading="lazy"
+                                    width="1800"
+                                    height="1800"
+                                    class="w-full rounded-2xl">
+                            </picture>
                         </div>
                     </div>
                     <div>
@@ -330,7 +375,21 @@
                     </div>
                     <div class="order-1 md:order-2 relative">
                         <div class="bg-white/30 backdrop-blur-2xl rounded-3xl p-6 border border-white/50 shadow-2xl transform hover:scale-105 transition-all duration-500">
-                            <img src="images/blanche/004.png" alt="Premium Experience" loading="lazy" class="w-full rounded-2xl">
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    srcset="images/blanche/004-small.webp 640w,
+                                            images/blanche/004-medium.webp 1024w,
+                                            images/blanche/004-large.webp 1920w"
+                                    sizes="(max-width: 768px) 100vw, 50vw">
+                                <img
+                                    src="images/blanche/004.png"
+                                    alt="Premium Experience"
+                                    loading="lazy"
+                                    width="6000"
+                                    height="4002"
+                                    class="w-full rounded-2xl">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -418,12 +477,21 @@
                 <!-- Review 1 -->
                 <div class="bg-white/40 backdrop-blur-2xl rounded-2xl overflow-hidden border border-white/50 shadow-xl hover:shadow-2xl hover:bg-white/50 transition-all duration-300">
                     <div class="h-64 overflow-hidden relative group">
-                        <img
-                            loading="lazy"
-                            src="images/blanche/Review-0.png"
-                            alt="Review"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        />
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="images/blanche/Review-0-small.webp 640w,
+                                        images/blanche/Review-0-medium.webp 1024w"
+                                sizes="(max-width: 768px) 100vw, 25vw">
+                            <img
+                                loading="lazy"
+                                src="images/blanche/Review-0.png"
+                                alt="Review"
+                                width="1800"
+                                height="1800"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            />
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 text-white backdrop-blur-sm">
                             <div class="flex items-center bg-white/20 backdrop-blur-xl px-4 py-2 rounded-full border border-white/30">
                                 <svg class="w-5 h-5 fill-white mr-2" viewBox="0 0 24 24">
@@ -454,12 +522,21 @@
                 <!-- Review 2 -->
                 <div class="bg-white/40 backdrop-blur-2xl rounded-2xl overflow-hidden border border-white/50 shadow-xl hover:shadow-2xl hover:bg-white/50 transition-all duration-300">
                     <div class="h-64 overflow-hidden relative group">
-                        <img
-                            loading="lazy"
-                            src="images/blanche/Review-1.png"
-                            alt="Review"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        />
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="images/blanche/Review-1-small.webp 640w,
+                                        images/blanche/Review-1-medium.webp 1024w"
+                                sizes="(max-width: 768px) 100vw, 25vw">
+                            <img
+                                loading="lazy"
+                                src="images/blanche/Review-1.png"
+                                alt="Review"
+                                width="1800"
+                                height="1800"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            />
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 text-white backdrop-blur-sm">
                             <div class="flex items-center bg-white/20 backdrop-blur-xl px-4 py-2 rounded-full border border-white/30">
                                 <svg class="w-5 h-5 fill-white mr-2" viewBox="0 0 24 24">
@@ -490,12 +567,21 @@
                 <!-- Review 3 -->
                 <div class="bg-white/40 backdrop-blur-2xl rounded-2xl overflow-hidden border border-white/50 shadow-xl hover:shadow-2xl hover:bg-white/50 transition-all duration-300">
                     <div class="h-64 overflow-hidden relative group">
-                        <img
-                            loading="lazy"
-                            src="images/blanche/Review-2.png"
-                            alt="Review"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        />
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="images/blanche/Review-2-small.webp 640w,
+                                        images/blanche/Review-2-medium.webp 1024w"
+                                sizes="(max-width: 768px) 100vw, 25vw">
+                            <img
+                                loading="lazy"
+                                src="images/blanche/Review-2.png"
+                                alt="Review"
+                                width="1800"
+                                height="1800"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            />
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 text-white backdrop-blur-sm">
                             <div class="flex items-center bg-white/20 backdrop-blur-xl px-4 py-2 rounded-full border border-white/30">
                                 <svg class="w-5 h-5 fill-white mr-2" viewBox="0 0 24 24">
@@ -526,12 +612,21 @@
                 <!-- Review 4 -->
                 <div class="bg-white/40 backdrop-blur-2xl rounded-2xl overflow-hidden border border-white/50 shadow-xl hover:shadow-2xl hover:bg-white/50 transition-all duration-300">
                     <div class="h-64 overflow-hidden relative group">
-                        <img
-                            loading="lazy"
-                            src="images/blanche/Review-3.png"
-                            alt="Review"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        />
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="images/blanche/Review-3-small.webp 640w,
+                                        images/blanche/Review-3-medium.webp 1024w"
+                                sizes="(max-width: 768px) 100vw, 25vw">
+                            <img
+                                loading="lazy"
+                                src="images/blanche/Review-3.png"
+                                alt="Review"
+                                width="1800"
+                                height="1800"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            />
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 text-white backdrop-blur-sm">
                             <div class="flex items-center bg-white/20 backdrop-blur-xl px-4 py-2 rounded-full border border-white/30">
                                 <svg class="w-5 h-5 fill-white mr-2" viewBox="0 0 24 24">
