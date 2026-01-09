@@ -121,11 +121,19 @@
                 <div class="relative z-10 transform group-hover:scale-105 transition-transform duration-700 ease-out">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-3xl blur-2xl lg:block hidden"></div>
                     <div class="relative overflow-hidden lg:rounded-3xl">
+                        <!-- Mobile image: 023.jpg -->
                         <img
                             src="images/blanche/023.jpg"
                             alt="Blanche Toothpaste"
                             loading="eager"
-                            class="relative w-full lg:max-w-lg mx-auto object-cover lg:h-auto h-[60vh] object-[center_40%]"
+                            class="lg:hidden relative w-full mx-auto object-cover h-[60vh] object-[center_40%]"
+                        />
+                        <!-- Desktop image: 4.jpg -->
+                        <img
+                            src="images/blanche/4.jpg"
+                            alt="Blanche Toothpaste"
+                            loading="eager"
+                            class="hidden lg:block relative w-full lg:max-w-lg mx-auto object-cover"
                         />
                         <!-- Beige gradient overlay on mobile -->
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-75% to-stone-50 lg:hidden pointer-events-none"></div>
